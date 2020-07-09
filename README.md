@@ -8,25 +8,26 @@
 |nickname|string|null: false|
 ### Association
 - has_many :texts
-- has_many  :groups, thorough:  :users_groups
+- has_many :groups, thorough:  :users_groups
+- has_many :users_groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
+- has_many :texts
 - has_many :users, through: :users_groups
-
+- has_many :users_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-###Association
+### Association
 - belongs_to :group
 - belongs_to :user
-- has_many :texts
 
 ## textsテーブル
 |Column|Type|Options|
@@ -37,6 +38,7 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :group
 - belongs_to :user_group
 
 
