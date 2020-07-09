@@ -8,17 +8,14 @@
 |nickname|string|null: false|
 ### Association
 - has_many :texts
-- has_many :groups
 - has_many  :groups, thorough:  :users_groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|integer|null: false|
 ### Association
-- has_many :users
-- has_many  :users, through:  :users_groups
+- has_many :users, through: :users_groups
 
 
 ## users_groupsテーブル
@@ -29,14 +26,19 @@
 ###Association
 - belongs_to :group
 - belongs_to :user
+- has_many :texts
 
 ## textsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|string||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- belongs_to :user_group
+
 
 
 This README would normally document whatever steps are necessary to get the
