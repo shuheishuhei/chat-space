@@ -9,7 +9,7 @@
 .side-bar {
   background-color: #253141;
   width: 300px;
-  .side-bar__user-name {
+  &__user-name {
     background-color: #253141;
     height: 100px;
     display: flex;
@@ -20,11 +20,11 @@
       margin-left: 20px;
       display: flex;
       justify-content: space-between;
-      .side-bar__user-name__top-items__name {
+      &__name {
         font-size: 16px;
         color: #ffffff;
       }
-      .side-bar__user-name__top-items__icons {
+      &__icons {
         width: 60px;
         display: flex;
         justify-content: flex-end;
@@ -41,14 +41,14 @@
   .side-bar__group-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    .side-bar__group-list__main {
-      .side-bar__group-list__main__name {
+    &__main {
+      &__name {
         font-size: 15px;
         color: #ffffff;
         margin: 0px 20px 5px 20px;
         padding-top: 20px;
       }
-      .side-bar__group-list__main__message {
+      &__message {
         color: #ffffff;
         font-size: 11px;
         margin: 0 20px 40px 20px;
@@ -60,7 +60,7 @@
 .chat-main {
   background-color: #ffffff;
   width: calc(100vw - 300px);
-  .chat-main__group-info {
+  &__group-info {
     background-color: #ffffff;
     height:100px;
     display: flex;
